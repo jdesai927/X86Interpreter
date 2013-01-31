@@ -1,0 +1,46 @@
+### Starting build.
+# Target: main.ml.depends, tags: { extension:ml, file:main.ml, ocaml, ocamldep, quiet }
+/usr/bin/ocamldep -modules main.ml > main.ml.depends # cached
+# Target: assert.mli.depends, tags: { extension:mli, file:assert.mli, ocaml, ocamldep, quiet }
+/usr/bin/ocamldep -modules assert.mli > assert.mli.depends # cached
+# Target: assert.cmi, tags: { byte, compile, extension:mli, file:assert.mli, interf, ocaml, quiet }
+/usr/bin/ocamlc.opt -c -o assert.cmi assert.mli # cached
+# Target: gradedtests.ml.depends, tags: { extension:ml, file:gradedtests.ml, ocaml, ocamldep, quiet }
+/usr/bin/ocamldep -modules gradedtests.ml > gradedtests.ml.depends # cached
+# Target: interpreter.mli.depends, tags: { extension:mli, file:interpreter.mli, ocaml, ocamldep, quiet }
+/usr/bin/ocamldep -modules interpreter.mli > interpreter.mli.depends # cached
+# Target: x86.mli.depends, tags: { extension:mli, file:x86.mli, ocaml, ocamldep, quiet }
+/usr/bin/ocamldep -modules x86.mli > x86.mli.depends # cached
+# Target: x86.cmi, tags: { byte, compile, extension:mli, file:x86.mli, interf, ocaml, quiet }
+/usr/bin/ocamlc.opt -c -o x86.cmi x86.mli # cached
+# Target: interpreter.cmi, tags: { byte, compile, extension:mli, file:interpreter.mli, interf, ocaml, quiet }
+/usr/bin/ocamlc.opt -c -o interpreter.cmi interpreter.mli # cached
+# Target: gradedtests.cmo, tags: { byte, compile, extension:ml, file:gradedtests.ml, implem, ocaml, quiet }
+/usr/bin/ocamlc.opt -c -o gradedtests.cmo gradedtests.ml # cached
+# Target: providedtests.ml.depends, tags: { extension:ml, file:providedtests.ml, ocaml, ocamldep, quiet }
+/usr/bin/ocamldep -modules providedtests.ml > providedtests.ml.depends # cached
+# Target: providedtests.cmo, tags: { byte, compile, extension:ml, file:providedtests.ml, implem, ocaml, quiet }
+/usr/bin/ocamlc.opt -c -o providedtests.cmo providedtests.ml # cached
+# Target: main.cmo, tags: { byte, compile, extension:ml, file:main.ml, implem, ocaml, quiet }
+/usr/bin/ocamlc.opt -c -o main.cmo main.ml # cached
+# Target: assert.ml.depends, tags: { extension:ml, file:assert.ml, ocaml, ocamldep, quiet }
+/usr/bin/ocamldep -modules assert.ml > assert.ml.depends # cached
+# Target: assert.cmx, tags: { compile, extension:cmx, extension:ml, file:assert.cmx, file:assert.ml, implem, native, ocaml, quiet }
+/usr/bin/ocamlopt.opt -c -o assert.cmx assert.ml # cached
+# Target: interpreter.ml.depends, tags: { extension:ml, file:interpreter.ml, ocaml, ocamldep, quiet }
+/usr/bin/ocamldep -modules interpreter.ml > interpreter.ml.depends
+# Target: x86.ml.depends, tags: { extension:ml, file:x86.ml, ocaml, ocamldep, quiet }
+/usr/bin/ocamldep -modules x86.ml > x86.ml.depends # cached
+# Target: x86.cmx, tags: { compile, extension:cmx, extension:ml, file:x86.cmx, file:x86.ml, implem, native, ocaml, quiet }
+/usr/bin/ocamlopt.opt -c -o x86.cmx x86.ml # cached
+# Target: interpreter.cmx, tags: { compile, extension:cmx, extension:ml, file:interpreter.cmx, file:interpreter.ml, implem, native, ocaml, quiet }
+/usr/bin/ocamlopt.opt -c -o interpreter.cmx interpreter.ml
+# Target: gradedtests.cmx, tags: { compile, extension:cmx, extension:ml, file:gradedtests.cmx, file:gradedtests.ml, implem, native, ocaml, quiet }
+/usr/bin/ocamlopt.opt -c -o gradedtests.cmx gradedtests.ml
+# Target: providedtests.cmx, tags: { compile, extension:cmx, extension:ml, file:providedtests.cmx, file:providedtests.ml, implem, native, ocaml, quiet }
+/usr/bin/ocamlopt.opt -c -o providedtests.cmx providedtests.ml
+# Target: main.cmx, tags: { compile, extension:cmx, extension:ml, file:main.cmx, file:main.ml, implem, native, ocaml, quiet }
+/usr/bin/ocamlopt.opt -c -o main.cmx main.ml
+# Target: main.native, tags: { dont_link_with, extension:native, file:main.native, link, native, ocaml, program, quiet }
+/usr/bin/ocamlopt.opt assert.cmx x86.cmx interpreter.cmx gradedtests.cmx providedtests.cmx main.cmx -o main.native
+# Compilation successful.
